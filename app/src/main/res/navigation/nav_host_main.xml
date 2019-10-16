@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?><!--navigation必须设置是他人员Destination 设置初始化加载的fragment -->
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:startDestination="@id/fragment1">
+    <fragment
+        android:id="@+id/fragment1"
+        android:name="cn.zdh.navigation.Fragment1">
+
+        <!--destination跳转的fragment-->
+        <action
+            android:id="@+id/action_1"
+            app:destination="@id/fragment2" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/fragment2"
+        android:name="cn.zdh.navigation.Fragment2">
+
+        <!--如果要跳转多个fragment可以设置多个action-->
+        <action
+            android:id="@+id/action_2_1"
+            app:destination="@id/fragment1" />
+
+        <action
+            android:id="@+id/action_2"
+            app:destination="@id/fragment3" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment3"
+        android:name="cn.zdh.navigation.Fragment3">
+
+        <action
+            android:id="@+id/action_3"
+            app:destination="@id/fragment1" />
+    </fragment>
+</navigation>
